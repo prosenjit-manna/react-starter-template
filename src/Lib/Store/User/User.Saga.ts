@@ -4,11 +4,16 @@ import { ForgetPasswordPayload, LoginPayload } from '../../Api/Fake/Users/users.
 import routes from '../../Routes/Routes';
 import { helperSliceActions } from '../Helper/Helper.Slice';
 import { userSliceActions } from './User.Slice';
+import { notifications } from '@mantine/notifications';
 
 function* loginMiddleWare({ payload }: { payload: LoginPayload }): any {
     try {
       const { user } = yield userApi.getCurrentUser();
       yield console.log(user, payload);
+      notifications.show({
+        title: 'Logged in',
+        message: 'Successfully logged in',
+      });
       yield put(userSliceActions.setUser(user));
       yield put(helperSliceActions.setRedirectUrl(routes.dashboard.children.me.fullPath));
     } catch (e) {
