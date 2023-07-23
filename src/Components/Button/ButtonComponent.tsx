@@ -1,24 +1,49 @@
-import { Button } from '@mantine/core';
+import { Button, DefaultMantineColor, Variants } from '@mantine/core';
+
+export const defaultButtonConfig = {
+  color: 'violet'
+};
 
 export default function ButtonComponent({
+  onClick,
   loading,
-  color = 'violet',
+  color,
+  variant,
   children,
   className,
   testId,
-  type
+  type,
 }: {
+  onClick?: () =>  void
   loading?: boolean;
   type?: 'submit' | 'button';
-  color?: string;
+  color?: DefaultMantineColor | undefined;
   className?: string;
-  children: any
-  testId?: string
+  children: any;
+  testId?: string;
+  variant?:
+    | Variants<
+        | 'gradient'
+        | 'filled'
+        | 'outline'
+        | 'light'
+        | 'white'
+        | 'default'
+        | 'subtle'
+      >
+    | undefined;
 }) {
 
 
   return (
-    <Button loading={loading} data-test-id={testId} className={className} color={color} type={type}>
+    <Button
+      loading={loading}
+      data-test-id={testId}
+      className={className}
+      color={color}
+      type={type}
+      variant={variant}
+      onClick={onClick && onClick}>
       {children}
     </Button>
   );

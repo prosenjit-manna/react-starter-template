@@ -6,7 +6,7 @@ import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 import queryString from 'query-string';
 
-import ButtonComponent from 'Components/Button/ButtonComponent';
+import ButtonComponent, { defaultButtonConfig } from 'Components/Button/ButtonComponent';
 import { useAppSelector } from 'Lib/Store/hooks';
 import { postSliceActions } from 'Lib/Store/Post/Post.slice';
 import { PostListRouteQuery } from 'Lib/Routes/routes.interface';
@@ -66,7 +66,7 @@ export default function PostListPage() {
                   <Popup trigger={<button>...</button>} position='bottom right'>
                     <div className='p-2'>
                       <Link to={postRoutes.post.fullPath({ postId: post.id })}>
-                        <ButtonComponent className='mt-2'>Edit</ButtonComponent>
+                        <ButtonComponent color={defaultButtonConfig.color} >Edit</ButtonComponent>
                       </Link>
                     </div>
                   </Popup>

@@ -34,7 +34,7 @@ export default function LoginPage() {
           <div className='flex items-center mb-6 mt-4'>
             <div className='flex ml-auto'>
               <Link to={routes.forgetPassword.path}
-               className='inline-flex text-xs font-thin text-gray-500 sm:text-sm  hover:text-gray-700'>
+               className='inline-flex text-xs  text-gray-500 sm:text-sm  hover:text-gray-700'>
                 Forgot Your Password?
               </Link>
             </div>
@@ -47,7 +47,7 @@ export default function LoginPage() {
       <div className='flex items-center justify-center mt-6'>
         <Link
           to={routes.register.path}
-          className='inline-flex items-center text-xs font-thin text-center text-gray-500 hover:text-gray-700'>
+          className='inline-flex items-center text-xs  text-center text-gray-500 hover:text-gray-700'>
           <span className='ml-2'>You don&#x27;t have an account?</span>
         </Link>
       </div>

@@ -31,13 +31,13 @@ export default function ForgetPassWordPage() {
           <TextFieldComponent icon={<EmailIcon />} placeholder='Your email' register={register('username')} />
           <div className='flex items-center mb-6 mt-4'>
             <div className='flex ml-auto'>
-              <div  className='inline-flex text-xs font-thin text-gray-500 sm:text-sm  hover:text-gray-700'>
+              <div  className='inline-flex text-xs  text-gray-500 sm:text-sm  hover:text-gray-700'>
                 Already have password <Link to={routes.login.path} className="ml-1 underline"> login</Link>
               </div>
             </div>
           </div>
           <div className='flex w-full'>
-            <ButtonComponent testId='login' type='submit' loading={forGetPasswordState.loading}>Login</ButtonComponent>
+            <ButtonComponent testId='login' type='submit' loading={forGetPasswordState.loading}>Request password change</ButtonComponent>
           </div>
         </form>
         {forGetPasswordState.token && (
