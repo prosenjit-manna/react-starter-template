@@ -2,18 +2,15 @@ import { DefaultRoute } from './DefaultRoute.Interface';
 
 export interface DashBoardRoutes {
   path: string;
-
-  children: {
-    me: DefaultRoute
-  },
+  me: DefaultRoute
 }
-export const dashboardRoutes: DashBoardRoutes = {
-  path: '/dashboard',
 
-  children: {
-    me: {
-      path: 'me',
-      fullPath: '/dashboard/me',
-    },
+const dashboardPath = '/dashboard';
+
+export const dashboardRoutes: DashBoardRoutes = {
+  path: dashboardPath,
+  me: {
+    path: `${dashboardPath}/me`,
+    fullPath: `${dashboardPath}/me`,
   },
 };

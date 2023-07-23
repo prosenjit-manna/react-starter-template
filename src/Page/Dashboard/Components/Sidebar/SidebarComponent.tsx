@@ -27,7 +27,7 @@ export default function SidebarComponent() {
 
           <Link
             className='hover:text-gray-800 hover:bg-gray-100 flex items-center p-2 my-6 transition-colors  duration-200  text-gray-600 rounded-lg '
-            to={routes.dashboard.children.me.path}>
+            to={routes.dashboard.me.path}>
             <span className='mx-4 text-lg font-normal'>Profile</span>
           </Link>
           <MenuLink

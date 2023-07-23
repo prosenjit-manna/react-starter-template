@@ -18,13 +18,6 @@ export const routes = {
   },
   app: {
     path: '/app',
-
-    children: {
-      me: {
-        path: '/app/me',
-        fullPath: '/app/me'
-      }
-    }
   },
   dashboard: dashboardRoutes
 };

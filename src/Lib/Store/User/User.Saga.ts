@@ -15,7 +15,7 @@ function* loginMiddleWare({ payload }: { payload: LoginPayload }): any {
         message: 'Successfully logged in',
       });
       yield put(userSliceActions.setUser(user));
-      yield put(helperSliceActions.setRedirectUrl(routes.dashboard.children.me.fullPath));
+      yield put(helperSliceActions.setRedirectUrl(routes.dashboard.me.fullPath));
     } catch (e) {
       console.trace(e);
       console.log(e);

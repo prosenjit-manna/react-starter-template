@@ -5,7 +5,6 @@ import routes from './Routes';
 
 const NotFound = React.lazy(() => import('Page/NotFoundPage'));
 const IndexPage = React.lazy(() => import('Page/Index'));
-const AppPage = React.lazy(() => import('Page/AppPage'));
 
 import { AuthRoutes } from 'Page/Auth/AuthRoutes';
 import { PostRoutes } from 'Page/Dashboard/Post/PostRoutes';
@@ -20,14 +19,11 @@ export default function AppRoutes() {
         <Routes>
           <Route path={routes.home.path} element={<IndexPage />} />
 
-          <Route path={routes.app.path} element={<AppPage />}>
-            <Route path={routes.app.children.me.path} element={<AuthGuard />}>
-              <Route path={routes.app.children.me.path} element={<ProfilePage />} />
-            </Route>
-          </Route>
-
           <Route path={routes.dashboard.path} element={<DashboardPage />}>
-            <Route path={routes.dashboard.children.me.path} element={<ProfilePage />} />
+            <Route path={routes.dashboard.me.path} element={<AuthGuard />}>
+              <Route path={routes.dashboard.me.path} element={<ProfilePage />} />
+            </Route>
+            
             {PostRoutes}
           </Route>
           

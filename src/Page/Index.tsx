@@ -18,7 +18,7 @@ export default function Index() {
     console.log({ user });
     
     if (user) {
-      dispatch(helperSliceActions.setRedirectUrl(routes.app.children.me.fullPath));
+      dispatch(helperSliceActions.setRedirectUrl(routes.dashboard.me.fullPath));
     } else {
       dispatch(helperSliceActions.setRedirectUrl(routes.login.path));
     }
