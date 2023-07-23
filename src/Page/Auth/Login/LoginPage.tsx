@@ -9,10 +9,12 @@ import { useAppDispatch, useAppSelector } from '../../../Lib/Store/hooks';
 import { userSliceActions } from '../../../Lib/Store/User/User.Slice';
 import { Link } from 'react-router-dom';
 import routes from '../../../Lib/Routes/Routes';
+import { useViewportSize } from '@mantine/hooks';
 
 export default function LoginPage() {
   const loginState = useAppSelector(state => state.user.login);
   const dispatch  = useAppDispatch();
+  const { height } = useViewportSize();
 
   const {
     register,
@@ -24,7 +26,8 @@ export default function LoginPage() {
   };
 
   return (
-    <div className='mx-auto flex flex-col w-full max-w-md px-4 py-8 bg-white rounded-lg shadow  sm:px-6 md:px-8 lg:px-10'>
+    <div style={{ height: `${height}px` }} className='flex justify-center items-center'>
+      <div className='mx-auto flex flex-col w-full max-w-md px-4 py-8 bg-white rounded-lg shadow  sm:px-6 md:px-8 lg:px-10'>
       <div className='self-center mb-6 text-xl font-light text-gray-600 sm:text-2xl '>Login To Your Account</div>
       <div className='mt-8'>
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -52,6 +55,6 @@ export default function LoginPage() {
         </Link>
       </div>
     </div>
-    
+    </div>
   );
 }

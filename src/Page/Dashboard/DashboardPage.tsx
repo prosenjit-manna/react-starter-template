@@ -1,27 +1,40 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import HeaderComponent from '../../Components/Header/HeaderComponent';
 import SidebarComponent from './Components/Sidebar/SidebarComponent';
 import { useDisclosure, useViewportSize } from '@mantine/hooks';
-import { Drawer } from '@mantine/core';
+import { Drawer, Skeleton } from '@mantine/core';
 
+function DashboardLoadingUi() {
+  const { height } = useViewportSize();
+  return (
+    <Skeleton
+      height={height}
+    />
+  );
+}
 export default function DashboardPage() {
   const [opened, { open, close }] = useDisclosure(false);
   const { width } = useViewportSize();
 
   return (
     <div className='flex'>
-      {width > 768 && (
-        <SidebarComponent />
-      )}
+      {width > 768 && <SidebarComponent />}
 
-      <Drawer opened={opened} onClose={close}>
+      <Drawer
+        opened={opened}
+        onClose={close}>
         <SidebarComponent />
       </Drawer>
-      
+
       <div className='w-full'>
-        <HeaderComponent handleMobileDrawer={open} sidebarOpened={opened} />
-        <Outlet />
+        <HeaderComponent
+          handleMobileDrawer={open}
+          sidebarOpened={opened}
+        />
+        <Suspense fallback={<DashboardLoadingUi />}>
+          <Outlet />
+        </Suspense>
       </div>
     </div>
   );
