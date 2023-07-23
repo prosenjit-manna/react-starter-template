@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import routes from '../../../../Lib/Routes/Routes';
 import MenuLink from './MenuLink';
+import { postRoutes } from 'Lib/Routes/PostRoutes';
 
 export default function SidebarComponent() {
   return (
@@ -87,8 +88,8 @@ export default function SidebarComponent() {
 
           <MenuLink
             text='Posts'
-            activeMenuPaths={routes.dashboard.children.post.postMatchingPath}
-            link={routes.dashboard.children.post.list.fullPath}
+            activeMenuPaths={postRoutes.postMatchingPath}
+            link={postRoutes.list.fullPath}
           />
 
           <Link

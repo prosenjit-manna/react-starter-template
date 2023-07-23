@@ -1,6 +1,5 @@
 import React, { Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import LoadingOverLay from '../../Components/Loading/LoadingOverLay';
 import { AuthGuard } from '../Guards/AuthGuard';
 import routes from './Routes';
 
@@ -17,7 +16,7 @@ const ProfilePage = React.lazy(() => import('Page/Profile/ProfilePage'));
 export default function AppRoutes() {
   return (
     <div>
-      <Suspense fallback={<LoadingOverLay />}>
+      <Suspense fallback={<></>}>
         <Routes>
           <Route path={routes.home.path} element={<IndexPage />} />
 
