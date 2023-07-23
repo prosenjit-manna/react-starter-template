@@ -6,9 +6,15 @@ import routes from '../../Lib/Routes/Routes';
 import { useAppDispatch } from '../../Lib/Store/hooks';
 import { userSliceActions } from '../../Lib/Store/User/User.Slice';
 import { useViewportSize } from '@mantine/hooks';
-import ButtonComponent from 'Components/Button/ButtonComponent';
+import { Burger } from '@mantine/core';
 
-export default function HeaderComponent({ handleMobileDrawer }: { handleMobileDrawer?: any }) {
+export default function HeaderComponent({
+  handleMobileDrawer,
+  sidebarOpened,
+}: {
+  handleMobileDrawer?: any;
+  sidebarOpened?: boolean;
+}) {
   const { width } = useViewportSize();
 
   const dispatch = useAppDispatch();
@@ -106,17 +112,11 @@ export default function HeaderComponent({ handleMobileDrawer }: { handleMobileDr
             )}
 
             <div className='-mr-2 flex md:hidden'>
-              <ButtonComponent variant='subtle' onClick={handleMobileDrawer}>
-              <svg
-                  width='20'
-                  height='20'
-                  fill='currentColor'
-                  className='h-8 w-8'
-                  viewBox='0 0 1792 1792'
-                  xmlns='http://www.w3.org/2000/svg'>
-                  <path d='M1664 1344v128q0 26-19 45t-45 19h-1408q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45zm0-512v128q0 26-19 45t-45 19h-1408q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45zm0-512v128q0 26-19 45t-45 19h-1408q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45z'></path>
-                </svg>
-              </ButtonComponent>
+              <Burger
+                opened={sidebarOpened || false}
+                onClick={handleMobileDrawer}
+              />
+              
             </div>
           </div>
         </div>

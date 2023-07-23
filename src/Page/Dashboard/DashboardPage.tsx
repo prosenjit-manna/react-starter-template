@@ -20,7 +20,7 @@ export default function DashboardPage() {
       </Drawer>
       
       <div className='w-full'>
-        <HeaderComponent handleMobileDrawer={open} />
+        <HeaderComponent handleMobileDrawer={open} sidebarOpened={opened} />
         <Outlet />
       </div>
     </div>
