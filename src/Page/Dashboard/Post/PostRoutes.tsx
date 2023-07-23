@@ -7,7 +7,7 @@ const PostDetails = React.lazy(() => import('Page/Dashboard/Post/PostDetails/Pos
 
 export const PostRoutes = [
   <Route key='PostRoutes'>
-    <Route path={routes.dashboard.children.postList.path} element={<PostList />} />
-    <Route path={routes.dashboard.children.post.path} element={<PostDetails />} />
+    <Route path={routes.dashboard.children.post.list.path} element={<PostList />} />
+    <Route path={routes.dashboard.children.post.post.path} element={<PostDetails />} />
   </Route>,
 ];

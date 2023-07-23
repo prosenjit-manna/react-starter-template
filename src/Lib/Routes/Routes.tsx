@@ -1,5 +1,4 @@
-import queryString from 'query-string';
-import { PostListRouteQuery, PostRouteParams } from './routes.interface';
+import { dashboardRoutes } from './DashboardRoutes';
 
 export const routes = {
   home: {
@@ -24,27 +23,7 @@ export const routes = {
       }
     }
   },
-  dashboard: {
-    path: '/dashboard',
-
-    children: {
-      me: {
-        path: 'me',
-        fullPath: '/dashboard/me'
-      },
-      postMatchingPath: '/dashboard/post',
-      postList: {
-        path: 'post-list',
-        fullPath: '/dashboard/post-list',
-        build: (query: PostListRouteQuery ) => `/dashboard/post-list?${queryString.stringify(query)}`,
-      },
-      post: {
-        path: 'post/:postId',
-        fullPath: ({ postId }: PostRouteParams ) => `/dashboard/post/${postId}`
-      }
-    },
-  }
-
+  dashboard: dashboardRoutes
 };
 
 export default routes;

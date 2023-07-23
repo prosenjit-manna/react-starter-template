@@ -58,14 +58,14 @@ export default function PostListPage() {
                 <td className='border-b-2 p-4 dark:border-dark-5'>
                   <Link
                     className='text-blue-400 hover:text-gray-700'
-                    to={routes.dashboard.children.post.fullPath({ postId: post.id })}>
+                    to={routes.dashboard.children.post.post.fullPath({ postId: post.id })}>
                     {post.title}
                   </Link>
                 </td>
                 <td className='border-b-2 p-4 dark:border-dark-5'>
                   <Popup trigger={<button>...</button>} position='bottom right'>
                     <div className='p-2'>
-                      <Link to={routes.dashboard.children.post.fullPath({ postId: post.id })}>
+                      <Link to={routes.dashboard.children.post.post.fullPath({ postId: post.id })}>
                         <ButtonComponent className='mt-2'>Edit</ButtonComponent>
                       </Link>
                     </div>
@@ -78,7 +78,7 @@ export default function PostListPage() {
       </table>
       <div className='px-5 bg-white py-5 flex flex-col xs:flex-row items-center xs:justify-between'>
         <div className='flex items-center'>
-        <Link to={routes.dashboard.children.postList.build({ page: (page + -1) })}>
+        <Link to={routes.dashboard.children.post.list.build({ page: (page + -1) })}>
           <button
             type='button'
             className='w-full p-4 border text-base rounded-l-xl text-gray-600 bg-white hover:bg-gray-100'>
@@ -97,7 +97,7 @@ export default function PostListPage() {
             Page: {page}
           </div>
           
-          <Link to={routes.dashboard.children.postList.build({ page: (page + 1) })}>
+          <Link to={routes.dashboard.children.post.list.build({ page: (page + 1) })}>
             <button
               type='button'
               className='w-full p-4 border-t border-b border-r text-base  rounded-r-xl text-gray-600 bg-white hover:bg-gray-100'>
