@@ -1,6 +1,13 @@
 import { dashboardRoutes } from './DashboardRoutes';
-import { PostListRouteQuery, PostRouteParams } from './routes.interface';
 import queryString from 'query-string';
+
+export interface PostRouteParams { 
+  postId: string | number
+}
+
+export interface PostListRouteQuery { 
+  page?: number | string;
+}
 
 
 export const postRoutes = {
