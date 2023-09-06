@@ -32,10 +32,18 @@ export default function SidebarComponent() {
             link={routes.dashboard.me.path}
           />
 
+          
+          <MenuLink
+            text='Header and Footer'
+            activeMenuPaths={routes.uiRoutes.pageWithHeaderAndFooter.path}
+            link={routes.uiRoutes.pageWithHeaderAndFooter.path}
+          />
+
           <MenuLink
             text='Logout'
             link={routes.logout.path}
           />
+          
         </nav>
       </div>
     </div>
