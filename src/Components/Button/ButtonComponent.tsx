@@ -1,4 +1,4 @@
-import { Button, DefaultMantineColor, Variants } from '@mantine/core';
+import { Button, ButtonVariant, DefaultMantineColor } from '@mantine/core';
 
 export const defaultButtonConfig = {
   color: 'violet'
@@ -21,17 +21,7 @@ export default function ButtonComponent({
   className?: string;
   children: any;
   testId?: string;
-  variant?:
-    | Variants<
-        | 'gradient'
-        | 'filled'
-        | 'outline'
-        | 'light'
-        | 'white'
-        | 'default'
-        | 'subtle'
-      >
-    | undefined;
+  variant?: ButtonVariant
 }) {
 
 

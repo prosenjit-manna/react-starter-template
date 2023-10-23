@@ -9,9 +9,7 @@ import AppRoutes from './Lib/Routes/AppRoutes';
 function App() {
   return (
     <div className='App'>
-      <MantineProvider
-        withGlobalStyles
-        withNormalizeCSS>
+      <MantineProvider>
         <ScrollToTop />
         <TrackRedirectLinks />
         <Notifications position='top-right' />

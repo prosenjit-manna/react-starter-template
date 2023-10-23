@@ -18,6 +18,6 @@ export default function TextFieldComponent({
   size?: string;
 }) {
   return (
-    <TextInput type={type} label={label} placeholder={placeholder} icon={icon} {...register} className='mb-4' size={size} />
+    <TextInput type={type} label={label} placeholder={placeholder} rightSection={icon} {...register} className='mb-4' size={size} />
   );
 }

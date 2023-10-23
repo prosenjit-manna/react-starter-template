@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { userSliceActions } from 'Lib/Store/User/User.Slice';
 import { useAppDispatch } from 'Lib/Store/hooks';
 import React, { useEffect } from 'react';
