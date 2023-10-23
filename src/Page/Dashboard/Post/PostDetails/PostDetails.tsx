@@ -16,7 +16,7 @@ export default function PostDetailsPage() {
     return () => {
       dispatch(postSliceActions.setPost(null));
     };
-  }, [postId]);
+  }, [postId, dispatch]);
   
 
   return (

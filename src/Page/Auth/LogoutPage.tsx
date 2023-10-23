@@ -11,7 +11,7 @@ export default function LogoutPage() {
 
   useEffect(() => {
     logOut();
-  }, []);
+  });
 
   return <div>LogoutPage</div>;
 }

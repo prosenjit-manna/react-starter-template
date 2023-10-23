@@ -1,14 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useAppSelector } from '../../Lib/Store/hooks';
 
 export default function ProfilePage() {
   const user = useAppSelector((state) => state.user.currentUser);
 
-  useEffect(() => {
-    setTimeout(() => {
-      throw Error('test');
-    }, 3000);
-  }, []);
 
   return (
     <section className='h-screen bg-gray-100 bg-opacity-50 pt-8'>
@@ -16,15 +11,15 @@ export default function ProfilePage() {
         <div className='p-4 bg-gray-100 border-t-2 border-indigo-400 rounded-lg bg-opacity-5'>
           <div className='max-w-sm mx-auto md:w-full md:mx-0'>
             <div className='inline-flex items-center space-x-4'>
-              <a
-                href='#'
-                className='block relative'>
+              <button
+                type='button'
+                className='block relative border-0'>
                 <img
                   alt='profil'
                   src={user?.image}
                   className='mx-auto object-cover rounded-full h-16 w-16 '
                 />
-              </a>
+              </button>
               <h1 className='text-gray-600'>
                 {user?.firstName} {user?.lastName}
               </h1>

@@ -2,7 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 
+import '@mantine/core/styles.css';
 import './index.scss';
+
 import { store } from './Lib/Store/Store';
 import { Provider } from 'react-redux';
 

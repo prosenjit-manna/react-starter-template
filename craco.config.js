@@ -1,6 +1,6 @@
 module.exports = {
-  typescript: {
-    enableTypeChecking: true /* (default value) */,
+  eslint: {
+    mode: 'file',
   },
   plugins: [
     {

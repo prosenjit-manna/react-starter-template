@@ -23,7 +23,7 @@ export default function PostListPage() {
     } else {
       dispatch(postSliceActions.getPosts({ _limit: 10 }));
     }
-  }, [location.search]);
+  }, [location.search, dispatch]);
 
   return (
     <div>
