@@ -5,8 +5,7 @@ import queryString from 'query-string';
 
 import { useAppSelector } from 'Lib/Store/hooks';
 import { postSliceActions } from 'Lib/Store/Post/Post.slice';
-import { PostListRouteQuery } from 'Lib/Routes/routes.interface';
-import { postRoutes } from 'Lib/Routes/PostRoutes';
+import { PostListRouteQuery, postRoutes } from 'Lib/Routes/PostRoutes';
 import { Button, Menu } from '@mantine/core';
 
 export default function PostListPage() {

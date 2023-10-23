@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "dotenv -e .env react-scripts start",
-    "build": "dotenv -e .env.production react-scripts build",
-    "test": "react-scripts test",
+    "start": "dotenv -e .env craco start",
+    "build": "dotenv -e .env.production craco build",
+    "test": "craco test",
+    "lint": "eslint src/**/*.ts{,x} --max-warnings=0",
     "lint-staged": "lint-staged",
     "prepare": "husky install"
   },
@@ -35,6 +36,7 @@
     "@sentry/react": "^7.5.0",
     "@sentry/tracing": "^7.5.0",
     "axios": "^1.4.0",
+    "craco-plugin-scoped-css": "^1.1.1",
     "date-fns": "^2.30.0",
     "lodash": "^4.17.21",
     "query-string": "^7.0.1",
@@ -50,6 +52,8 @@
   "devDependencies": {
     "@commitlint/cli": "^17.6.6",
     "@commitlint/config-conventional": "^17.6.6",
+    "@craco/craco": "^5.9.0",
+    "@craco/types": "^7.1.0",
     "@tailwindcss/typography": "^0.5.9",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.3.0",

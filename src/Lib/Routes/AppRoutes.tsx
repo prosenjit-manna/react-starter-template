@@ -8,6 +8,7 @@ const IndexPage = React.lazy(() => import('Page/Index'));
 
 import { AuthRoutes } from 'Page/Auth/AuthRoutes';
 import { PostRoutes } from 'Page/Dashboard/Post/PostRoutes';
+import { UiRoutes } from 'Page/Dashboard/Ui/UiRoutes';
 
 const DashboardPage = React.lazy(() => import('Page/Dashboard/DashboardPage'));
 const ProfilePage = React.lazy(() => import('Page/Profile/ProfilePage'));
@@ -25,6 +26,7 @@ export default function AppRoutes() {
             </Route>
             
             {PostRoutes}
+            {UiRoutes}
           </Route>
           
 

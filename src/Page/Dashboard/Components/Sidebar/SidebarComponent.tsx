@@ -1,12 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import routes from '../../../../Lib/Routes/Routes';
+import routes from 'Lib/Routes/Routes';
 import MenuLink from './MenuLink';
 import { postRoutes } from 'Lib/Routes/PostRoutes';
 
 export default function SidebarComponent() {
   return (
-    <div className='flex flex-col sm:flex-row sm:justify-around'>
+    <div 
+      className='flex flex-col sm:flex-row sm:justify-around' 
+      data-test-id="dashboard-sidebar">
       <div className='w-72 h-screen'>
         <div className='flex items-center justify-start mx-6 mt-10'>
           <img
@@ -25,15 +26,24 @@ export default function SidebarComponent() {
             link={postRoutes.list.fullPath}
           />
 
-          <Link
-            className='hover:text-gray-800 hover:bg-gray-100 flex items-center p-2 my-6 transition-colors  duration-200  text-gray-600 rounded-lg '
-            to={routes.dashboard.me.path}>
-            <span className='mx-4 text-lg font-normal'>Profile</span>
-          </Link>
+          <MenuLink
+            text='Profile'
+            activeMenuPaths={routes.dashboard.me.path}
+            link={routes.dashboard.me.path}
+          />
+
+          
+          <MenuLink
+            text='Header and Footer'
+            activeMenuPaths={routes.uiRoutes.pageWithHeaderAndFooter.path}
+            link={routes.uiRoutes.pageWithHeaderAndFooter.path}
+          />
+
           <MenuLink
             text='Logout'
             link={routes.logout.path}
           />
+          
         </nav>
       </div>
     </div>

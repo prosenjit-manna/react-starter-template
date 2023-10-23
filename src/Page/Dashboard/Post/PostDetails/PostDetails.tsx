@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { useAppSelector } from '../../../../Lib/Store/hooks';
-import { postSliceActions } from '../../../../Lib/Store/Post/Post.slice';
-import { PostRouteParams } from '../../../../Lib/Routes/routes.interface';
+import { useAppSelector } from 'Lib/Store/hooks';
+import { postSliceActions } from 'Lib/Store/Post/Post.slice';
+import { PostRouteParams } from 'Lib/Routes/PostRoutes';
 
 export default function PostDetailsPage() {
   const { postId } = useParams() as unknown as PostRouteParams ;

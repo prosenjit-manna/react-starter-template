@@ -25,7 +25,7 @@ export default function HeaderComponent({
 
   return (
     <div>
-      <nav className='bg-white   shadow '>
+      <nav className='bg-white   shadow md:hidden'>
         <div className='mx-auto px-4 md:px-8'>
           <div className='flex items-center justify-between h-10 md:h-16'>
             <div className=' flex items-center'>
