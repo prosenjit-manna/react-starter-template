@@ -33,7 +33,7 @@ function handleChange() {
   // localStorage.setItem('app_state', JSON.stringify(state));
 }
 
-store.subscribe(handleChange);
+// store.subscribe(handleChange);
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
 export type RootState = ReturnType<typeof store.getState>;
