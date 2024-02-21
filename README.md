@@ -1,6 +1,7 @@
 # React Starter Template
 
 ## Features
+- Vite Config 
 - React typescript with eslint and husky pre-commit hooks for checking lint staged files 
 - Tailwind added 
 - Auth pages added 
