@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "lint": "eslint src/**/*.ts{,x} --max-warnings=0",
     "lint-staged": "lint-staged",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "commit": "git-cz"
   },
   "lint-staged": {
     "src/**/*.{ts,tsx}": "eslint src/**/*.ts{,x} --max-warnings=0"
@@ -26,7 +27,14 @@
       "last 1 safari version"
     ]
   },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/@digitalroute/cz-conventional-changelog-for-jira",
+      "jiraPrefix": "PROJ"
+    }
+  },
   "dependencies": {
+    "@digitalroute/cz-conventional-changelog-for-jira": "^8.0.1",
     "@emotion/react": "^11.11.1",
     "@faker-js/faker": "^7.2.0",
     "@hookform/resolvers": "^2.9.1",
@@ -39,6 +47,7 @@
     "@testing-library/react": "^14.2.1",
     "@vitejs/plugin-react": "^4.2.1",
     "axios": "^1.4.0",
+    "commitizen": "^4.3.0",
     "date-fns": "^2.30.0",
     "lodash": "^4.17.21",
     "query-string": "^7.0.1",
