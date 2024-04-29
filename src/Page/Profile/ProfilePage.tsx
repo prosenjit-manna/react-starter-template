@@ -1,5 +1,6 @@
 import React from 'react';
 import { useAppSelector } from '../../Lib/Store/hooks';
+import './Profile.scoped.scss';
 
 export default function ProfilePage() {
   const user = useAppSelector((state) => state.user.currentUser);

@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react';
 import viteTsconfigPaths from 'vite-tsconfig-paths';
 import eslint from 'vite-plugin-eslint';
 import { VitePWA } from 'vite-plugin-pwa';
+import { reactScopedCssPlugin } from 'rollup-plugin-react-scoped-css'
 
 export default defineConfig({
   // depending on your application, base can also be "/"
@@ -11,6 +12,7 @@ export default defineConfig({
     react(),
     viteTsconfigPaths(),
     eslint(),
+    reactScopedCssPlugin(),
     VitePWA({
       registerType: 'autoUpdate',
       workbox: {
