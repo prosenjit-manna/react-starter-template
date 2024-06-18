@@ -22,11 +22,12 @@ export default function AppRoutes() {
             <Route path={routes.dashboard.me.path} element={<AuthGuard />}>
               <Route path={routes.dashboard.me.path} element={(<ProfilePage />)} />
             </Route>
+            <Route path="*" element={<NotFound />} />
           </Route>
           
-
-          {AuthRoutes}
           <Route path="*" element={<NotFound />} />
+          {AuthRoutes}
+          
         </Routes>
       </Suspense>
     </div>
