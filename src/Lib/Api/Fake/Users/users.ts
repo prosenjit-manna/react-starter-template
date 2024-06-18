@@ -1,17 +1,15 @@
 import { faker } from '@faker-js/faker';
 import _ from 'lodash';
-import axios from 'axios';
-
-const fakeHttp  = axios.create({
-  baseURL: 'https://reqres.in/api'
-});
 
 import { CurrentUserResponse, LoginPayload, User } from './users.interface';
 
 export const userApi = {
   login: async (payload: LoginPayload) => {
-    const response = await fakeHttp.post('/login', payload);
-    return response.data as { token: string };
+    return new Promise((resolve) => {
+      _.delay(() => {
+        resolve({ token: faker.datatype.uuid() });
+      }, 1000);
+    });
   },
   getCurrentUser: (): Promise<CurrentUserResponse> => {
     return new Promise((resolve) => {
@@ -33,7 +31,7 @@ export const userApi = {
     return new Promise((resolve) => {
       _.delay(() => {
         resolve({ token: faker.datatype.uuid() });
-      }, 3000);
+      }, 1000);
     });
   }
 };

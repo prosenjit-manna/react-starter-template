@@ -6,7 +6,8 @@ export const appEnv = cleanEnv(import.meta.env, {
 
 const appConfig  = {
   storage: {
-    user: 'app_user'
+    user: 'app_user',
+    store: 'app_store',
   }
 };
 export default appConfig;

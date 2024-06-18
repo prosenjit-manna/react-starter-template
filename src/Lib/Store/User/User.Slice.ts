@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { ForgetPasswordPayload, LoginPayload, User } from '../../Api/Fake/Users/users.interface';
-import appConfig from '../../appConfig';
+import { appStore } from 'Lib/appStore';
 
 export interface ForgetPasswordState {
   loading: boolean;
@@ -15,11 +15,10 @@ export interface UserSliceState {
   forgetPassword: ForgetPasswordState
 }
 
-const userData = localStorage.getItem(appConfig.storage.user) ? 
-  JSON.parse(localStorage.getItem(appConfig.storage.user) as string) : null;
+const store = appStore.get();
 
 const initialState: UserSliceState = {
-  currentUser: userData,
+  currentUser: store.user,
   login: {
     loading: false
   },
@@ -48,15 +47,21 @@ export const userSlice = createSlice({
     setUser: (state, { payload }: { payload: User }) => {
       state.currentUser = payload;
       state.login.loading = payload ? false : true;
+      const store = appStore.get();
+
       if (payload) {
-        localStorage.setItem(appConfig.storage.user, JSON.stringify(payload));
+        store.user = payload;
+        appStore.set(store);
       } else {
-        localStorage.removeItem(appConfig.storage.user);
+        store.user = null;
+        appStore.set(store);
       }
     },
     logout: (state) => {
+      const store = appStore.get();
+      store.user = null;
       state.currentUser = null;
-      localStorage.removeItem(appConfig.storage.user);
+      appStore.set(store);
     }
   }
 });
